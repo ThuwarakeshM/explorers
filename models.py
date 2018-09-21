@@ -1,7 +1,5 @@
 from django.db import models
 
-# Create your models here.
-
 
 class PageInfo(models.Model):
     page_title = models.CharField(
@@ -17,18 +15,32 @@ class PageInfo(models.Model):
 
     pub_date = models.DateField(auto_now=True)
 
+    thumbnail = models.CharField(
+        max_length=300, help_text='Thumbnail to represent the page', blank=True, null=True)
+
     def __str__(self):
         return self.page_qualifier
 
     class Meta:
-        abstract=True
+        abstract = True
 
-class MainPage(PageInfo):
+
+class Album(PageInfo):
+    internal = models.BooleanField(default=True)
+    is_published = models.BooleanField(default=False)
+
     def get_absolute_url(self):
-        return '/{}'.format(self    .page_qualifier)
+        return '/gallary/{}'.format(self.page_qualifier)
+
+
+class FlatPage(PageInfo):
+    def get_absolute_url(self):
+        return '/{}'.format(self.page_qualifier)
 
 
 class ImageSet(models.Model):
+    album = models.ForeignKey(Album, on_delete=models.SET_NULL, null=True)
+
     url_desktop = models.CharField(
         max_length=300, help_text='Image to show on desktops')
     url_laptop = models.CharField(
@@ -62,17 +74,19 @@ class ImageSet(models.Model):
 
 class Contact(models.Model):
     name = models.CharField(max_length=100)
-    email = models.EmailField()
-    phone = models.CharField(max_length=15)
-    staff = models.BooleanField()
+    email = models.EmailField(blank=True, null=True)
+    phone = models.CharField(max_length=15, blank=True, null=True)
+    is_staff = models.BooleanField(default=False)
+    is_active = models.BooleanField(default=True)
 
     joined_date = models.DateField(auto_now_add=True)
 
     def __str__(self):
-            return self.name
+        return self.name
 
     class Meta:
         unique_together = ('email', 'phone',)
+
 
 class Activity(PageInfo):
     image = models.ForeignKey(ImageSet, on_delete=models.PROTECT)
@@ -84,14 +98,17 @@ class Activity(PageInfo):
 
     instructor = models.ForeignKey(Contact, on_delete=models.PROTECT)
 
+    is_published = models.BooleanField(default=False)
+
     class Meta:
-        abstract=True
+        abstract = True
+
 
 class Adventure(Activity):
 
     def get_absolute_url(self):
         return '/adventures/{}'.format(self.page_qualifier)
-    
+
 
 class Event(Activity):
 
