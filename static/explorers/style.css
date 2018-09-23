@@ -1,0 +1,25 @@
+body {
+    background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPi8dBre886aMQfybIUFs5zPoSGk0Ei4WmqjBMtgmPZkF7Jn4ALA");
+}
+
+.card {
+    border:none;
+    background: #77777777;
+    color: white;
+    font-weight: bold;
+}
+
+.card a {
+    border-radius: 0px;
+    background: #777777;
+    border-color: #77777777;
+}
+
+.navbar {
+    background-color: #77777788;
+}
+
+.navbar a {
+    font-weight: bold;
+    color: white !important;
+}
