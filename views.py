@@ -6,7 +6,8 @@ from .models import Adventure, Event, Album
 
 
 def home(request):
-    return render(request, 'explorers/home.html', {})
+    adventures = Adventure.objects.all()[:6]
+    return render(request, 'explorers/home.html', {'adventures': adventures})
 
 
 def about(request):
