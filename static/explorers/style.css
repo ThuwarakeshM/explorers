@@ -56,3 +56,19 @@ body {
 #adventure_detail img {
     max-width: 100%;
 }
+
+strong {
+    color: #cf5a5a;
+}
+
+.map iframe {
+    height: 500px;
+    width: 100%;
+}
+
+@media screen and (max-width: 992px) {
+    .map iframe {
+        height: 250px;
+        width: 100%;
+    }
+  }
