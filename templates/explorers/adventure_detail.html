@@ -2,30 +2,30 @@
 
 {% block content %}
 
-<div class="container">
+<div class="container" id='adventure_detail'>
     <div class="row">
         <div class="col-sm-0 col-lg-1">
         </div>
-        <div class="col-sm-12 col-lg-10" style="color:white;">
-            <img class="d-block w-100" srcset="
-                {{ adventure.image.url_desktop }} 1200w,
-                {{ adventure.image.url_laptop }} 992w,
-                {{ adventure.image.url_tablets}} 768w,
-                {{ adventure.image.url_mobile }}
-                "
-                alt="{{adventure.image.image_alt}}">
+        <div class="col-sm-12 col-lg-10">
+
+            <picture>
+                <source media="(min-width: 1200px)" srcset="{{ adventure.image.url_desktop }}">
+                <source media="(min-width: 992px)" srcset="{{ adventure.image.url_laptop }}">
+                <source media="(min-width: 768px)" srcset="{{ adventure.image.url_tablets}}">
+                <img src="{{ adventure.image.url_mobile }}" alt="{{ adventure.image.image_alt }}">
+            </picture>
             <br>
-            <h3>Description</h3>
+            <h5>Description</h5>
             {% for item in adventure.description %}
             <p>{{ item }}</p>
             {% endfor %}
             <br>
-            <h3>Eligibility</h3>
+            <h5>Eligibility</h5>
             {% for item in adventure.eligibility %}
             <p>{{item}}</p>
             {% endfor %}
             <br>
-            <h3>Preparations</h3>
+            <h5>Preparations</h5>
             {% for item in adventure.preparation %}
             <p>{{item}}</p>
             {% endfor %}

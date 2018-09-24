@@ -42,3 +42,16 @@ body {
     width: 256px;
     height: auto;
 }
+
+#adventure_detail {
+    color:white;
+}
+
+
+#adventure_detail h5 {
+    color:#cf5a5a;
+}
+
+#adventure_detail img {
+    max-width: 100%;
+}
