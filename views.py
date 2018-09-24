@@ -34,6 +34,9 @@ def adventures(request):
 
 def adventure(request, qualifier):
     adv = Adventure.objects.get(page_qualifier=qualifier)
+    adv.description = adv.description.split('|')
+    adv.eligibility = adv.eligibility.split('|')
+    adv.preparation = adv.preparation.split('|')
     return render(request, 'explorers/adventure_detail.html', {'adventure': adv})
 
 
