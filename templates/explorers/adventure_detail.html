@@ -29,6 +29,10 @@
             {% for item in adventure.preparation %}
             <p>{{item}}</p>
             {% endfor %}
+            <br>
+            <p>Cost per person: <strong> LKR {{ adventure.cost }}.00</strong> <br> * <i>Discounts available subject to the number of participants</i></p>
+            <p>Instructor in Charge: <strong> {{ adventure.instructor.name }}</strong></p>
+            <a href="/contact" class="btn btn-primary">Contact Us</a>
         </div>
         <div class="col-sm-0 col-lg-1">
         </div>

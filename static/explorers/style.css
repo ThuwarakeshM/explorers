@@ -12,14 +12,14 @@ body {
     color: #cf5a5a;
 }
 
-.card a {
+.btn-primary {
     border-radius: 0px;
     background: white;
     border-color: #b9b7b794;
     color: #cf5a5a;
 }
 
-.card a:hover {
+.btn-primary:hover {
     color:white;
     background: #cf5a5a;
     border-color: #cf5a5a;
