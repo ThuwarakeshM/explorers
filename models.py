@@ -114,3 +114,9 @@ class Event(Activity):
 
     def get_absolute_url(self):
         return '/events/{}'.format(self.page_qualifier)
+
+class Query(models.Model):
+    name = models.CharField(max_length=100)
+    email = models.EmailField()
+    phone = models.CharField(max_length=20)
+    message = models.TextField()

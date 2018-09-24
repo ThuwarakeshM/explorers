@@ -1,15 +1,36 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponseRedirect
 from django.views.generic import ListView, DetailView
-from .models import Adventure, Event, Album, FlatPage, ImageSet
-# Create your views here.
+from .models import Adventure, Event, Album, FlatPage, ImageSet, Query
+from .forms import ContactForm
+from django.views.decorators.http import require_POST
+
+def thanks(request):
+    return render(request, 'explorers/thanks.html', {})
+
+
+def contact_form(request):
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            data = form.cleaned_data
+            q = Query(
+                name=data['name'],
+                phone=data['phone'],
+                message=data['message'],
+                email=data['email']
+            )
+    
+            q.save()
+            return HttpResponseRedirect('/thanks')
+    return HttpResponseRedirect('/contact/?invalid=1')
 
 
 def home(request):
     page = FlatPage.objects.get(page_qualifier='home')
     adventures = Adventure.objects.all()[:6]
     album = Album.objects.get(page_qualifier='carousel')
-    carousel = ImageSet.objects.filter(album = album)
+    carousel = ImageSet.objects.filter(album=album)
     return render(request, 'explorers/home.html', {
         'adventures': adventures,
         'page': page,
@@ -23,8 +44,9 @@ def about(request):
 
 
 def contact(request):
+    form = ContactForm()
     page = FlatPage.objects.get(page_qualifier='contact')
-    return render(request, 'explorers/contact.html', {'page': page})
+    return render(request, 'explorers/contact.html', {'page': page, 'form': form})
 
 
 def adventures(request):
