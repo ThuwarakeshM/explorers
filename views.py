@@ -1,14 +1,20 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.views.generic import ListView, DetailView
-from .models import Adventure, Event, Album, FlatPage
+from .models import Adventure, Event, Album, FlatPage, ImageSet
 # Create your views here.
 
 
 def home(request):
     page = FlatPage.objects.get(page_qualifier='home')
     adventures = Adventure.objects.all()[:6]
-    return render(request, 'explorers/home.html', {'adventures': adventures, 'page': page})
+    album = Album.objects.get(page_qualifier='carousel')
+    carousel = ImageSet.objects.filter(album = album)
+    return render(request, 'explorers/home.html', {
+        'adventures': adventures,
+        'page': page,
+        'carousel': carousel
+    })
 
 
 def about(request):
