@@ -1,27 +1,35 @@
 {% extends "explorers/base.html" %}
 
 {% block content %}
-<form action="/contact_form" method="POST" class="mx-2">
-    {% csrf_token %}
 
-    <div class="table-wrap">
-        <table>
-            <col width="120">
-            <col width="360">
-            {{ form }}
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 col-sm-12">
+            <form action="/contact_form" method="POST" class="px-0">
+                {% csrf_token %}
 
-        </table>
+                <div class="table-wrap">
+                    <table>
+                        <col width="30%">
+                        <col width="70%">
+                        {{ form }}
 
-        <br>
-        <div>
-            <button class="btn btn-primary float-right" type="submit">Submit</button>
+                    </table>
+
+                    <br>
+                    <div>
+                        <button class="btn btn-primary" type="submit">Submit</button>
+                    </div>
+                    <br>
+                </div>
+            </form>
         </div>
-        <br>
+        <div class="col-md-6 col-sm-12">
+
+        </div>
     </div>
+</div>
 
-
-
-</form>
 <br>
 <div class="map px-2">
     <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15840.546072323457!2d80.4180924!3d6.9931978!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x1dad87963c0b3407!2sAdventure+Explorers!5e0!3m2!1sen!2slk!4v1537788561989"
