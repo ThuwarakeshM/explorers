@@ -74,6 +74,10 @@ table input {
     width: 100%;
 }
 
+.table-wrap {
+    max-width: 380px;
+}
+
 .form-control {
     border-radius: 0px;
     width: 100%;

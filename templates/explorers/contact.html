@@ -3,14 +3,23 @@
 {% block content %}
 <form action="/contact_form" method="POST" class="mx-2">
     {% csrf_token %}
-    <table>
-        <col width="120">
-        <col width="360">
-        {{ form }}
 
-    </table>
-    <br>
-    <button class="btn btn-primary" type="submit">Submit</button>
+    <div class="table-wrap">
+        <table>
+            <col width="120">
+            <col width="360">
+            {{ form }}
+
+        </table>
+
+        <br>
+        <div>
+            <button class="btn btn-primary float-right" type="submit">Submit</button>
+        </div>
+        <br>
+    </div>
+
+
 
 </form>
 <br>
