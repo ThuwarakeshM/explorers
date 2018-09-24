@@ -66,6 +66,14 @@ strong {
     width: 100%;
 }
 
+table {
+    color: white;
+}
+
+table input {
+    width: 100%;
+}
+
 @media screen and (max-width: 992px) {
     .map iframe {
         height: 250px;
