@@ -74,6 +74,10 @@ table input {
     width: 100%;
 }
 
+.form-control {
+    border-radius: 0px;
+}
+
 @media screen and (max-width: 992px) {
     .map iframe {
         height: 250px;
