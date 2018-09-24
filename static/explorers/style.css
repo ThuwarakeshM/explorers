@@ -76,6 +76,7 @@ table input {
 
 .form-control {
     border-radius: 0px;
+    width: 100%;
 }
 
 @media screen and (max-width: 992px) {
