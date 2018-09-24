@@ -38,7 +38,8 @@ body {
 }
 
 .card img {
-    padding: 6%;
+    margin: 6%;
+    border-radius: 0%;
     width: 256px;
     height: auto;
 }

@@ -13,7 +13,7 @@
                     {% for imageset in carousel %}
                     {% if not forloop.counter0 %}
                     <div class="carousel-item active">
-                        <picture class="d-block w-100">
+                        <picture class="d-block w-100 img-fluid">
                             <source media="(min-width: 1200px)" srcset="{{ imageset.url_desktop }}">
                             <source media="(min-width: 992px)" srcset="{{ imageset.url_laptop }}">
                             <source media="(min-width: 768px)" srcset="{{ imageset.url_tablets}}">
@@ -23,11 +23,11 @@
 
                     {% else %}
                     <div class="carousel-item">
-                        <picture class="d-block w-100">
+                        <picture>
                             <source media="(min-width: 1200px)" srcset="{{ imageset.url_desktop }}">
                             <source media="(min-width: 992px)" srcset="{{ imageset.url_laptop }}">
                             <source media="(min-width: 768px)" srcset="{{ imageset.url_tablets}}">
-                            <img src="{{ imageset.url_mobile }}" alt="{{ imageset.image_alt }}">
+                            <img src="{{ imageset.url_mobile }}" alt="{{ imageset.image_alt }}" class="d-block w-100 img-fluid">
                         </picture>
                     </div>
                     {% endif %}
