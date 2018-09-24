@@ -9,10 +9,10 @@
         <div class="col-sm-12 col-lg-10">
 
             <picture>
-                <source media="(min-width: 1200px)" srcset="{{ adventure.image.url_desktop }}">
-                <source media="(min-width: 992px)" srcset="{{ adventure.image.url_laptop }}">
-                <source media="(min-width: 768px)" srcset="{{ adventure.image.url_tablets}}">
-                <img src="{{ adventure.image.url_mobile }}" alt="{{ adventure.image.image_alt }}">
+                <source media="(min-width: 1200px)" data-src="{{ adventure.image.url_desktop }}">
+                <source media="(min-width: 992px)" data-src="{{ adventure.image.url_laptop }}">
+                <source media="(min-width: 768px)" data-src="{{ adventure.image.url_tablets}}">
+                <img data-src="{{ adventure.image.url_mobile }}" alt="{{ adventure.image.image_alt }}">
             </picture>
             <br>
             <h5>Description</h5>
