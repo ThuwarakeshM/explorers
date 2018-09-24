@@ -4,22 +4,39 @@ body {
 
 .card {
     border:none;
-    background: #77777777;
+    background:transparent;
     color: white;
-    font-weight: bold;
+}
+
+.card h5 {
+    color: #cf5a5a;
 }
 
 .card a {
     border-radius: 0px;
-    background: #777777;
-    border-color: #77777777;
+    background: transparent;
+    border-color: #cf5a5a;
+    color: #cf5a5a;
+}
+
+.card a:hover {
+    color:white;
+    background: #cf5a5a;
+    border-color: #cf5a5a;
 }
 
 .navbar {
-    background-color: #77777788;
 }
 
 .navbar a {
     font-weight: bold;
     color: white !important;
+}
+
+.navbar a:hover {
+    color: #cf5a5a !important;
+}
+
+.card img {
+    padding: 6%;
 }

@@ -1,21 +1,24 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.views.generic import ListView, DetailView
-from .models import Adventure, Event, Album
+from .models import Adventure, Event, Album, FlatPage
 # Create your views here.
 
 
 def home(request):
+    page = FlatPage.objects.get(page_qualifier='home')
     adventures = Adventure.objects.all()[:6]
-    return render(request, 'explorers/home.html', {'adventures': adventures})
+    return render(request, 'explorers/home.html', {'adventures': adventures, 'page': page})
 
 
 def about(request):
-    return render(request, 'explorers/about.html', {})
+    page = FlatPage.objects.get(page_qualifier='about')
+    return render(request, 'explorers/about.html', {'page': page})
 
 
 def contact(request):
-    return render(request, 'explorers/contact.html', {})
+    page = FlatPage.objects.get(page_qualifier='contact')
+    return render(request, 'explorers/contact.html', {'page': page})
 
 
 def adventures(request):

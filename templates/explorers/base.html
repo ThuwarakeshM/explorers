@@ -1,12 +1,25 @@
 <!doctype html>
 {% load static %}
 
-<html lang="en">
+<html lang="en" prefix="og: http://ogp.me/ns#">
 
 <head>
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- General SEO -->
+  <title>{{ page.page_title }}</title>
+  <meta name="description" content="{{page.page_description}}"/>
+  <meta name="keywords" content="{{page.page_keywords}}"/>
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="{{page.page_title}}" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="{{page.page_url}}" />
+  <meta property="og:image" content="{{page.page_image}}" />
+  <meta property="og:description" content="{{page.page_description}}" />
+
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
@@ -19,7 +32,7 @@
 
 <body>
   <nav class="navbar navbar-expand-lg navbar-light">
-    <a class="navbar-brand" href="/">Adventure Exploers</a>
+    <a class="navbar-brand" href="/">Adventure Explorers</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -48,7 +61,7 @@
   <br>
 
   {% block content %}
-  
+
   {% endblock content %}
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
