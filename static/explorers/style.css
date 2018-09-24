@@ -39,4 +39,6 @@ body {
 
 .card img {
     padding: 6%;
+    width: 256px;
+    height: auto;
 }
