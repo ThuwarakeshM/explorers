@@ -2,6 +2,14 @@ body {
     background: url("https://image.ibb.co/goruMp/bg.jpg");
 }
 
+p {
+    color: white;
+}
+
+a {
+    color: white;
+}
+
 .card {
     border:none;
     background:transparent;
