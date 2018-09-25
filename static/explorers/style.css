@@ -16,7 +16,7 @@ a {
     color: white;
 }
 
-.card h5 {
+h5 {
     color: #cf5a5a;
 }
 
@@ -50,15 +50,6 @@ a {
     border-radius: 0%;
     width: 256px;
     height: auto;
-}
-
-#adventure_detail {
-    color:white;
-}
-
-
-#adventure_detail h5 {
-    color:#cf5a5a;
 }
 
 #adventure_detail img {

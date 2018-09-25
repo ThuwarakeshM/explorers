@@ -1,1 +1,42 @@
 {% extends "explorers/base.html" %}
+
+{% block content %}
+
+<div class="container" id='event_detail'>
+    <div class="row">
+        <div class="col-sm-0 col-lg-1">
+        </div>
+        <div class="col-sm-12 col-lg-10">
+
+            <picture>
+                <source media="(min-width: 1200px)" data-src="{{ event.image.url_desktop }}">
+                <source media="(min-width: 992px)" data-src="{{ event.image.url_laptop }}">
+                <source media="(min-width: 768px)" data-src="{{ event.image.url_tablets}}">
+                <img data-src="{{ event.image.url_mobile }}" alt="{{ event.image.image_alt }}">
+            </picture>
+            <br>
+            <h5>Description</h5>
+            {% for item in event.description %}
+            <p>{{ item }}</p>
+            {% endfor %}
+            <br>
+            <h5>Eligibility</h5>
+            {% for item in event.eligibility %}
+            <p>{{item}}</p>
+            {% endfor %}
+            <br>
+            <h5>Preparations</h5>
+            {% for item in event.preparation %}
+            <p>{{item}}</p>
+            {% endfor %}
+            <br>
+            <p>Cost per person: <strong> LKR {{ event.cost }}.00</strong> <br> * <i>Discounts may be available with conditions</i></p>
+            <p>Instructor in Charge: <strong> {{ event.instructor.name }}</strong></p>
+            <a href="/contact" class="btn btn-primary">Contact Us</a>
+        </div>
+        <div class="col-sm-0 col-lg-1">
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

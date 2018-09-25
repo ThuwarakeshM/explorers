@@ -69,6 +69,9 @@ def events(request):
 
 def event(request, qualifier):
     evt = Event.objects.get(page_qualifier=qualifier)
+    evt.description = evt.description.split('|')
+    evt.eligibility = evt.eligibility.split('|')
+    evt.preparation = evt.preparation.split('|')
     return render(request, 'explorers/event_detail.html', {'event': evt})
 
 
@@ -79,4 +82,5 @@ def gallery(request):
 
 def album(request, qualifier):
     album = Album.objects.get(page_qualifier=qualifier)
-    return render(request, 'explorers/album.html', {'album': album})
+    images = ImageSet.objects.filter(album = album)
+    return render(request, 'explorers/album.html', {'images': images})
