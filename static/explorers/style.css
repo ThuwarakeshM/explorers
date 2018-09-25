@@ -80,6 +80,11 @@ table input {
     width: 100%;
 }
 
+#album-images img {
+    max-width: 100%;
+    height: auto;
+}
+
 @media screen and (max-width: 992px) {
     .map iframe {
         height: 250px;

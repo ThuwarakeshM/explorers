@@ -1,1 +1,22 @@
 {% extends "explorers/base.html" %}
+
+{% block content %}
+
+
+<div class="container" id='album-images'>
+    <div class="row">
+        {% for image in images %}
+        <div class="col-sm-12 col-md-6 pl-2">
+            <picture class="d-block w-100 img-fluid">
+                <source media="(min-width: 1200px)" srcset="{{ image.url_desktop }}">
+                <source media="(min-width: 992px)" srcset="{{ image.url_laptop }}">
+                <source media="(min-width: 768px)" srcset="{{ image.url_tablets}}">
+                <img src="{{ image.url_mobile }}" alt="{{ image.image_alt }}">
+            </picture>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+
+{% endblock content %}
