@@ -1,1 +1,7 @@
 {% extends "explorers/base.html" %}
+
+{% block content %}
+
+{% include "explorers/cards.html" with adventures=events %}
+
+{% endblock content %}
