@@ -98,7 +98,6 @@ table input {
 #footer p {
     color: #cf5a5a;
 }
-
 @media screen and (max-width: 992px) {
     .map iframe {
         height: 250px;
