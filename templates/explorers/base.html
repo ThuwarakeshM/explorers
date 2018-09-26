@@ -35,7 +35,9 @@
 
 <body>
   <nav class="navbar navbar-expand-lg navbar-light">
-    <a class="navbar-brand" href="/">Adventure Explorers</a>
+    <a class="navbar-brand" href="/">
+    <img src="{% static 'explorers/images/logo.png' %}" alt="">
+    </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -84,7 +86,6 @@
           src = image.getAttribute('data-src')
           image.setAttribute('srcset', src)
           image.removeAttribute('data-src')
-          console.log('changing')
         }
       }
 
@@ -94,10 +95,10 @@
         sources = pic.getElementsByTagName('source');
         for (var s = 0; s < sources.length; s++) {
           source = sources[s];
-          if (source.getAttribute('data-src')) {
-            pic_source_src = source.getAttribute('data-src');
+          if (source.getAttribute('data-srcset')) {
+            pic_source_src = source.getAttribute('data-srcset');
             source.setAttribute('srcset', pic_source_src);
-            source.removeAttribute('data-src');
+            source.removeAttribute('data-srcset');
           }
         }
       }
