@@ -51,6 +51,10 @@ h5, h3 {
     color: #cf5a5a !important;
 }
 
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
 .card img {
     margin: 6%;
     border-radius: 0%;
@@ -106,6 +110,10 @@ table input {
 }
 .header p {
     text-align:center;
+}
+
+img {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 @media screen and (max-width: 992px) {
     .map iframe {
