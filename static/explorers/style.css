@@ -101,7 +101,12 @@ table input {
     text-align: center; 
     color: #cf5a5a;
 }
-
+.header {
+    text-align: center; 
+}
+.header p {
+    text-align:center;
+}
 @media screen and (max-width: 992px) {
     .map iframe {
         height: 250px;
