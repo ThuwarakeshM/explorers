@@ -4,6 +4,7 @@ body {
 
 p {
     color: white;
+    text-align: justify;
 }
 
 a {
@@ -12,6 +13,7 @@ a {
 
 .card-text {
     height:120px;
+    max-width: 256px;
 }
 
 .card {
@@ -96,6 +98,7 @@ table input {
 }
 
 #footer p {
+    text-align: center; 
     color: #cf5a5a;
 }
 

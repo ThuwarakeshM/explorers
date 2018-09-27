@@ -2,6 +2,15 @@
 
 {% block content %}
 
-{% include "explorers/cards.html" with adventures=events %}
-
+<div class="container">
+        <div class="row">
+            <div class="col-sm-0 col-md-1"></div>
+            <div class="col-sm-12 col-md-10">
+                <h3>Events by Adventure Explorers</h3>
+                <p>In addition to our regular activities in Kitulgala, we also organize special events to explore new places, to enjoy the nature or to conserve the environment. Make sure you are with us in our next journey.</p>
+                    {% include "explorers/cards.html" with adventures=events %}
+            </div>
+            <div class="col-sm-0 col-md-1"></div>
+        </div>
+    </div>
 {% endblock content %}
