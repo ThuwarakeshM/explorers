@@ -25,5 +25,7 @@ urlpatterns = [
         'activities': AdventureSiteMap,
         'events': EventSiteMap,
     }},
-     name='django.contrib.sitemaps.views.sitemap')
+        name='django.contrib.sitemaps.views.sitemap'),
+    path('robots.txt', TemplateView.as_view(
+        template_name="explorers/robots.txt", content_type="text/plain"), name='robots'),
 ]

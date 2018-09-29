@@ -1,0 +1,18 @@
+User-Agent: AdsBot-Google
+User-Agent: Applebot
+User-Agent: BingPreview
+User-Agent: Googlebot
+User-Agent: Googlebot-Mobile
+User-Agent: Mediapartners-Google
+User-Agent: Twitterbot
+User-Agent: Yahoo! Slurp
+User-Agent: Yandex
+User-Agent: Slurp
+User-Agent: bingbot
+User-Agent: msnbot
+Allow: /
+
+User-Agent: *
+Disallow: /
+
+Sitemap: http://www.adventurexplorers.com/sitemap.xml
