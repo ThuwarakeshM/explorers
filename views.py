@@ -7,7 +7,7 @@ from django.views.decorators.http import require_POST
 
 def policies(request):
     page = FlatPage.objects.get(page_qualifier='policies')
-    return render(request, 'explorers/policies.html', {'policies': policies})
+    return render(request, 'explorers/policies.html', {'page': page})
 
 def thanks(request):
     return render(request, 'explorers/thanks.html', {})
@@ -55,7 +55,8 @@ def contact(request):
 
 def adventures(request):
     advs = Adventure.objects.filter(is_published=True)
-    return render(request, 'explorers/adventure_list.html', {'adventures': advs})
+    page = FlatPage.objects.get(page_qualifier='adventures')
+    return render(request, 'explorers/adventure_list.html', {'adventures': advs, 'page': page})
 
 
 def adventure(request, qualifier):
@@ -63,12 +64,13 @@ def adventure(request, qualifier):
     adv.description = adv.description.split('|')
     adv.eligibility = adv.eligibility.split('|')
     adv.preparation = adv.preparation.split('|')
-    return render(request, 'explorers/adventure_detail.html', {'adventure': adv})
+    return render(request, 'explorers/adventure_detail.html', {'adventure': adv, 'page': adv})
 
 
 def events(request):
     evts = Event.objects.filter(is_published=True)
-    return render(request, 'explorers/event_list.html', {'events': evts})
+    page = FlatPage.objects.get(page_qualifier='events')
+    return render(request, 'explorers/event_list.html', {'events': evts, 'page': page})
 
 
 def event(request, qualifier):
@@ -76,7 +78,7 @@ def event(request, qualifier):
     evt.description = evt.description.split('|')
     evt.eligibility = evt.eligibility.split('|')
     evt.preparation = evt.preparation.split('|')
-    return render(request, 'explorers/event_detail.html', {'event': evt})
+    return render(request, 'explorers/event_detail.html', {'event': evt, 'page': evt})
 
 
 def gallery(request):
