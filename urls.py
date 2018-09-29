@@ -16,4 +16,5 @@ urlpatterns = [
     path('album/<str:qualifier>/', views.album, name='album'),
     path('contact_form', views.contact_form, name='contact_form'),
     path('thanks', views.thanks, name='thanks'),
+    path('policies', views.policies, name='policies'),
 ]

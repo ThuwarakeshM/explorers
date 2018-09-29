@@ -5,6 +5,10 @@ from .models import Adventure, Event, Album, FlatPage, ImageSet, Query
 from .forms import ContactForm
 from django.views.decorators.http import require_POST
 
+def policies(request):
+    page = FlatPage.objects.get(page_qualifier='policies')
+    return render(request, 'explorers/policies.html', {'policies': policies})
+
 def thanks(request):
     return render(request, 'explorers/thanks.html', {})
 
