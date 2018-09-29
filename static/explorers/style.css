@@ -89,6 +89,10 @@ li {
     list-style: none;
 }
 
+.fa-bars {
+    color:white;
+}
+
 .form-control {
     border-radius: 0px;
     width: 100%;
