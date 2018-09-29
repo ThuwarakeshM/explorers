@@ -85,7 +85,9 @@ table input {
     width: 100%;
 }
 
-
+li {
+    list-style: none;
+}
 
 .form-control {
     border-radius: 0px;
