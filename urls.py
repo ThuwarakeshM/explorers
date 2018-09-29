@@ -28,4 +28,6 @@ urlpatterns = [
         name='django.contrib.sitemaps.views.sitemap'),
     path('robots.txt', TemplateView.as_view(
         template_name="explorers/robots.txt", content_type="text/plain"), name='robots'),
+    path('BingSiteAuth.xml', TemplateView.as_view(
+        template_name="explorers/BingSiteAuth.xml", content_type="text/xml"), name='bingAuth'),
 ]
