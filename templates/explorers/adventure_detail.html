@@ -20,7 +20,7 @@
             <p>{{ item }}</p>
             {% endfor %}
             <br>
-            <h5>Eligibility</h5>
+            {% comment %} <h5>Eligibility</h5>
             {% for item in adventure.eligibility %}
             <p>{{item}}</p>
             {% endfor %}
@@ -29,10 +29,12 @@
             {% for item in adventure.preparation %}
             <p>{{item}}</p>
             {% endfor %}
-            <br>
+            <br> 
             <p>Cost per person: <strong> LKR {{ adventure.cost }}.00</strong> <br> * <i>Discounts available subject to the number of participants</i></p>
             <p>Instructor in Charge: <strong> {{ adventure.instructor.name }}</strong></p>
-            <a href="/contact" class="btn btn-primary">Contact Us</a>
+            {% endcomment %}
+            <a href="/contact" class="btn btn-primary float-right">Contact Us</a>
+            <a href="/policies" class="btn btn-primary float-right mx-2">Our Policies</a>
         </div>
         <div class="col-sm-0 col-lg-1">
         </div>
