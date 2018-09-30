@@ -7,14 +7,16 @@
   <meta http-equiv="Cache-control" content="max-age=31536000">
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-97201241-1"></script>
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-97201241-1"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
 
     gtag('config', 'UA-97201241-1');
-  </script>
+  </script> -->
+  <script src="{%s static 'explorers/js/analytics.js' %}"></script>
+  <script async src="{% static 'explorers/js/gtag.js' %}"></script>
 
   <!-- Required meta tags -->
   <meta charset="utf-8">
