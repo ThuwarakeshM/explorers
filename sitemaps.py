@@ -4,6 +4,7 @@ from .models import FlatPage, Adventure, Event
 class PageSiteMap(Sitemap):
     changeferq="weekly"
     priority=0.5
+    protocol="https"
 
     def items(self):
         return FlatPage.objects.all()
@@ -14,6 +15,7 @@ class PageSiteMap(Sitemap):
 class AdventureSiteMap(Sitemap):
     changeferq="weekly"
     priority=0.8
+    protocol="https"
 
     def items(self):
         return Adventure.objects.all()
@@ -24,6 +26,7 @@ class AdventureSiteMap(Sitemap):
 class EventSiteMap(Sitemap):
     changeferq="weekly"
     priority=0.6
+    protocol="https"
 
     def items(self):
         return Event.objects.all()
