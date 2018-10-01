@@ -4,6 +4,7 @@ from django.views.generic import ListView, DetailView
 from .models import Adventure, Event, Album, FlatPage, ImageSet, Query
 from .forms import ContactForm
 from django.views.decorators.http import require_POST
+from django.utils import timezone
 
 def policies(request):
     page = FlatPage.objects.get(page_qualifier='policies')
@@ -78,7 +79,8 @@ def event(request, qualifier):
     evt.description = evt.description.split('|')
     evt.eligibility = evt.eligibility.split('|')
     evt.preparation = evt.preparation.split('|')
-    return render(request, 'explorers/event_detail.html', {'event': evt, 'page': evt})
+    finished = str((evt.event_end_date - timezone.now().date()).days)
+    return render(request, 'explorers/event_detail.html', {'event': evt, 'page': evt, 'status': finished})
 
 
 def gallery(request):

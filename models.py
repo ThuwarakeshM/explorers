@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils import timezone
 
 
 class PageInfo(models.Model):
@@ -111,6 +112,11 @@ class Adventure(Activity):
 
 
 class Event(Activity):
+    event_start_date = models.DateTimeField(default= timezone.now)
+    event_end_date = models.DateField(default= timezone.now)
+    event_start_time = models.TimeField(default= timezone.now)
+    event_start_place = models.CharField(max_length=100, default= "Fort Railway Station")
+    event_destination = models.CharField(max_length=100, default = "Adventure Explorers, Kitulgala")
 
     def get_absolute_url(self):
         return '/events/{}'.format(self.page_qualifier)
