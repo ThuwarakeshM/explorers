@@ -79,7 +79,7 @@ def event(request, qualifier):
     evt.description = evt.description.split('|')
     evt.eligibility = evt.eligibility.split('|')
     evt.preparation = evt.preparation.split('|')
-    finished = str((evt.event_end_date - timezone.now().date()).days)
+    finished = ((evt.event_end_date - timezone.now().date()).days < 0)
     return render(request, 'explorers/event_detail.html', {'event': evt, 'page': evt, 'status': finished})
 
 
