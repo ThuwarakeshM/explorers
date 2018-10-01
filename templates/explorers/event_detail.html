@@ -21,23 +21,24 @@
 
             <br>
 
-            <h5>Description</h5>
+            <h5>{{event.title}}</h5>
             {% for item in event.description %}
             <p>{{ item }}</p>
             {% endfor %}
 
 
             {% if status %}
-            <p style="color:red;">This event is closed now. You may request for another episode!</p>
+            <p style="color:red;"><strong> event is closed now. You may request for another episode!</strong></p>
             {% endif %}
 
             <br>
             <p>Cost per person: <strong> LKR {{ event.cost }}.00</strong> <br> * <i>Discounts may be available with
                     conditions</i></p>
-            <p>Instructor in Charge: <strong> {{ event.instructor.name }}</strong></p>
+            <p>Instructor incharge: <strong> {{ event.instructor.name }}</strong></p>
             <p>Event Starting: {{ event.event_start_date }}</p>
-            <p>Event End Date: {{ event.event_end_date }}</p>
+            <p>Event Finishing: {{ event.event_end_date }}</p>
             <p>Gathering Place: {{ event.event_start_place }}</p>
+            <p>Destination: {{ event.event_destination }}</p>
             <a href="/contact" class="btn btn-primary float-right">Contact Us</a>
             <a href="/policies" class="btn btn-primary float-right mx-2">Our Policies</a>
 
