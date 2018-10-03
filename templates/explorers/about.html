@@ -29,3 +29,24 @@
 </div>
 
 {% endblock content %}
+
+{% block sData %}
+<script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.adventurexplorers.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "About",
+        "item": "https://www.adventurexplorers.com/about"
+      }]
+    }
+    </script>
+{% endblock sData %}

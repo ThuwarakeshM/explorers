@@ -9,10 +9,14 @@
         <div class="col-sm-12 col-lg-10">
 
             <picture>
-                <source media="(min-width: 1200px)" srcset="https://image.ibb.co/cVK3Mp/Untitled_drawing_2_1.png" data-srcset="{{ adventure.image.url_desktop }}">
-                <source media="(min-width: 992px)" srcset="https://image.ibb.co/cVK3Mp/Untitled_drawing_2_1.png" data-srcset="{{ adventure.image.url_laptop }}">
-                <source media="(min-width: 768px)" srcset="https://image.ibb.co/cVK3Mp/Untitled_drawing_2_1.png" data-srcset="{{ adventure.image.url_tablets}}">
-                <img class="d-block w-100 img-fluid" src="https://image.ibb.co/cVK3Mp/Untitled_drawing_2_1.png" data-src="{{ adventure.image.url_mobile }}" alt="{{ adventure.image.image_alt }}">
+                <source media="(min-width: 1200px)" srcset="https://image.ibb.co/cVK3Mp/Untitled_drawing_2_1.png"
+                    data-srcset="{{ adventure.image.url_desktop }}">
+                <source media="(min-width: 992px)" srcset="https://image.ibb.co/cVK3Mp/Untitled_drawing_2_1.png"
+                    data-srcset="{{ adventure.image.url_laptop }}">
+                <source media="(min-width: 768px)" srcset="https://image.ibb.co/cVK3Mp/Untitled_drawing_2_1.png"
+                    data-srcset="{{ adventure.image.url_tablets}}">
+                <img class="d-block w-100 img-fluid" src="https://image.ibb.co/cVK3Mp/Untitled_drawing_2_1.png"
+                    data-src="{{ adventure.image.url_mobile }}" alt="{{ adventure.image.image_alt }}">
             </picture>
             <br>
             <h5>Description</h5>
@@ -29,8 +33,9 @@
             {% for item in adventure.preparation %}
             <p>{{item}}</p>
             {% endfor %}
-            <br> 
-            <p>Cost per person: <strong> LKR {{ adventure.cost }}.00</strong> <br> * <i>Discounts available subject to the number of participants</i></p>
+            <br>
+            <p>Cost per person: <strong> LKR {{ adventure.cost }}.00</strong> <br> * <i>Discounts available subject to
+                    the number of participants</i></p>
             <p>Instructor in Charge: <strong> {{ adventure.instructor.name }}</strong></p>
             {% endcomment %}
             <a href="/contact" class="btn btn-primary float-right">Contact Us</a>
@@ -42,3 +47,30 @@
 </div>
 
 {% endblock content %}
+
+{% block sData %}
+<script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.adventurexplorers.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Adventures",
+        "item": "https://www.adventurexplorers.com/adventures"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "{{page.page_qualifier}}",
+        "item": "https://www.adventurexplorers.com/adventures/{{page.page_qualifier}}"
+      }]
+    }
+    </script>
+{% endblock sData %}
