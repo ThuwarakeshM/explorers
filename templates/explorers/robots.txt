@@ -43,4 +43,4 @@ Disallow: /admin
 User-agent: *
 Disallow: /
 
-Sitemap: http://www.adventurexplorers.com/sitemap.xml
+Sitemap: https://www.adventurexplorers.com/sitemap.xml
