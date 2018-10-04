@@ -130,3 +130,5 @@ class Query(models.Model):
 
 class Article(PageInfo):
     content = MarkdownxField()
+    created = models.DateField(auto_now_add=True)
+    published = models.BooleanField()
