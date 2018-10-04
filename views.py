@@ -99,3 +99,9 @@ def album(request, qualifier):
 def article(request, qualifier):
     article = Article.objects.get(page_qualifier=qualifier)
     return render(request, 'explorers/article.html', {'page': article})
+
+
+def articles(request):
+    page = FlatPage.objects.get(page_qualifier='articles')
+    arts = Article.objects.filter(is_published=True)
+    return render(request, 'explorers/articles.html', {'page': page, 'articles': arts})

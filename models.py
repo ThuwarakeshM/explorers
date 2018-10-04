@@ -130,5 +130,15 @@ class Query(models.Model):
 
 class Article(PageInfo):
     content = MarkdownxField()
+    title = models.CharField(max_length=50, help_text="title to appear in the collection cards", blank=True, null=True)
     created = models.DateField(auto_now_add=True)
-    published = models.BooleanField()
+    is_published = models.BooleanField()
+
+    def get_absolute_url(self):
+        return '/articles/{}'.format(self.page_qualifier)
+
+    def save(self, *args, **kwargs):
+       if not self.title:
+           self.title = self.page_title
+       super().save(*args, **kwargs)
+    

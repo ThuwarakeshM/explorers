@@ -15,6 +15,7 @@ urlpatterns = [
     path('events', views.events, name='events'),
     path('events/<str:qualifier>/',
          views.event, name='event'),
+    path('articles', views.articles, name='articles'),
     path('articles/<str:qualifier>', views.article, name='article'),
     path('contact_form', views.contact_form, name='contact_form'),
     path('thanks', views.thanks, name='thanks'),

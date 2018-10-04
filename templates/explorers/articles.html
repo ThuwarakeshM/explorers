@@ -1,0 +1,20 @@
+{% extends 'explorers/base.html' %}
+
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-sm-0 col-md-1"></div>
+        <div class="col-sm-12 col-md-10">
+            <div class="header">
+                <h3>Adventure Explorers Resources</h3>
+                <p>
+                Find useful information about sri lankan travel and adventure tourism. 
+                </p>
+                {% include "explorers/cards.html" with adventures=articles %}
+            </div>
+        </div>
+        <div class="col-sm-0 col-md-1"></div>
+    </div>
+</div>
+{% endblock content %}
