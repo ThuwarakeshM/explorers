@@ -1,6 +1,6 @@
 from django.db import models
 from django.utils import timezone
-
+from markdownx.models import MarkdownxField
 
 class PageInfo(models.Model):
     page_title = models.CharField(
@@ -126,3 +126,7 @@ class Query(models.Model):
     email = models.EmailField()
     phone = models.CharField(max_length=20)
     message = models.TextField()
+
+
+class Article(PageInfo):
+    content = MarkdownxField()

@@ -1,14 +1,16 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from django.views.generic import ListView, DetailView
-from .models import Adventure, Event, Album, FlatPage, ImageSet, Query
+from .models import Adventure, Event, Album, FlatPage, ImageSet, Query, Article
 from .forms import ContactForm
 from django.views.decorators.http import require_POST
 from django.utils import timezone
 
+
 def policies(request):
     page = FlatPage.objects.get(page_qualifier='policies')
     return render(request, 'explorers/policies.html', {'page': page})
+
 
 def thanks(request):
     return render(request, 'explorers/thanks.html', {})
@@ -25,7 +27,7 @@ def contact_form(request):
                 message=data['message'],
                 email=data['email']
             )
-    
+
             q.save()
             return HttpResponseRedirect('/thanks')
     return HttpResponseRedirect('/contact/?invalid=1')
@@ -90,5 +92,10 @@ def gallery(request):
 
 def album(request, qualifier):
     album = Album.objects.get(page_qualifier=qualifier)
-    images = ImageSet.objects.filter(album = album)
+    images = ImageSet.objects.filter(album=album)
     return render(request, 'explorers/album.html', {'images': images})
+
+
+def article(request, qualifier):
+    article = Article.objects.get(page_qualifier=qualifier)
+    return render(request, 'explorers/article.html', {'page': article})
