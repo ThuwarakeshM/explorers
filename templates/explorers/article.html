@@ -16,3 +16,42 @@
     </div>
 </div>
 {% endblock content %}
+
+{% block sData %}
+<script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "Article",
+        "author":"{{page.author}}",
+        "headline": "{{page.page_title}}",
+        "datePublished":"{{page.created}}",
+        "image": "{{page.page_image}}",
+        "dateModified": "{{page.pub_date}}",
+        "mainEntityOfPage": {
+                 "@type": "WebPage",
+                 "@id": "{{page.page_url}}"
+              },
+        "publisher":{
+              "@type": "Organization",
+              "url": "https://www.adventurexplorers.com",
+              "name": "Adventure Explorers",
+              "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "+94-76-469-2668",
+                "contactType": "customer support"
+              },
+              "logo": {
+                  "type": "ImageObject",
+                "url":"https://image.ibb.co/nOVqie/Adventure_Explorers_Logo.jpg"
+              },
+              "sameAs": [
+                "https://www.facebook.com/Adventurexplorers/",
+                "https://www.instagram.com/adventureexplorerslanka/",
+                "https://twitter.com/AdExplorers",
+                "https://plus.google.com/communities/106623692637154718247"
+              ],
+              "description": "Adventure Explorers is an organization of professionals for adventure sports in Sri Lanka. Whitewater Rafting in Kitulgala, Abseiling, Hiking & Camping on many popular waterfalls and mountain ranges are some of the popular activities offered by Adventure Explorers."
+            }
+        }
+</script>
+{% endblock sData %}
