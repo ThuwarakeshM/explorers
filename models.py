@@ -127,6 +127,9 @@ class Query(models.Model):
     phone = models.CharField(max_length=20)
     message = models.TextField()
 
+    def __str__(self):
+            return self.name
+
 
 class Article(PageInfo):
     content = MarkdownxField()
