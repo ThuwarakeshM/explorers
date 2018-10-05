@@ -49,6 +49,21 @@
 {% endblock content %}
 
 {% block sData %}
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org/",
+  "@type": "Product",
+  "name": "{{ page.page_title}}",
+  "image": [
+    "{{ page.page_image }}"
+   ],
+  "description": "{{ page.page_description }}",
+  "brand": "Adventure Explorers",
+  "url":"https://www.adventurexplorers.com/{{ page.page_url }}"
+}
+</script>
+
 <script type="application/ld+json">
     {
       "@context": "http://schema.org",
