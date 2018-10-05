@@ -35,7 +35,7 @@ def contact_form(request):
 
 def home(request):
     page = FlatPage.objects.get(page_qualifier='home')
-    adventures = Adventure.objects.all()[:6]
+    adventures = Adventure.objects.filter(is_published=True)[:6]
     album = Album.objects.get(page_qualifier='carousel')
     carousel = ImageSet.objects.filter(album=album)
     return render(request, 'explorers/home.html', {
