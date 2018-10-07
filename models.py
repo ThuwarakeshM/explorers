@@ -133,7 +133,7 @@ class Query(models.Model):
 
 class Article(PageInfo):
     content = MarkdownxField()
-    autho = models.CharField(max_length=100, default='Thuwarakesh M')
+    author = models.CharField(max_length=100, default='Thuwarakesh M')
     title = models.CharField(max_length=50, help_text="title to appear in the collection cards", blank=True, null=True)
     created = models.DateField(auto_now_add=True)
     is_published = models.BooleanField()
