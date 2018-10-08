@@ -2,7 +2,7 @@ from django.urls import path
 from . import views
 from django.views.generic import TemplateView
 from django.contrib.sitemaps.views import sitemap
-from .sitemaps import PageSiteMap, AdventureSiteMap, EventSiteMap
+from .sitemaps import PageSiteMap, AdventureSiteMap, EventSiteMap, ArticleSiteMap
 
 
 urlpatterns = [
@@ -24,6 +24,7 @@ urlpatterns = [
         'pages': PageSiteMap,
         'activities': AdventureSiteMap,
         'events': EventSiteMap,
+        'articles': ArticleSiteMap
     }},
         name='django.contrib.sitemaps.views.sitemap'),
     path('robots.txt', TemplateView.as_view(

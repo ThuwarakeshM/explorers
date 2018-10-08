@@ -1,5 +1,5 @@
 from django.contrib.sitemaps import Sitemap
-from .models import FlatPage, Adventure, Event
+from .models import FlatPage, Adventure, Event, Article
 
 class PageSiteMap(Sitemap):
     changeferq="weekly"
@@ -30,6 +30,17 @@ class EventSiteMap(Sitemap):
 
     def items(self):
         return Event.objects.all()
+
+    def lastmod(self, obj):
+        return obj.pub_date
+
+class ArticleSiteMap(Sitemap):
+    changefreq="never"
+    priority=0.6
+    protocol='https'
+
+    def items(self):
+        return Article.objects.filter(is_published=True)
 
     def lastmod(self, obj):
         return obj.pub_date
