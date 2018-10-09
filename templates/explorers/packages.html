@@ -1,0 +1,40 @@
+{% extends 'explorers/base.html' %} 
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-sm-0 col-md-1"></div>
+        <div class="col-sm-12 col-md-10">
+            <div class="header">
+                <h3>Popular Packages of Adventure Explorers</h3>
+                <p>
+                Most Professional Adventure Sports Packages in Sri Lanka
+                </p>
+                {% include "explorers/cards.html" with adventures=packages %}
+            </div>
+        </div>
+        <div class="col-sm-0 col-md-1"></div>
+    </div>
+</div>
+{% endblock content %}
+
+{% block sData %}
+<script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.adventurexplorers.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Packages",
+        "item": "https://www.adventurexplorers.com/packages"
+      }]
+    }
+    </script>
+{% endblock sData %}

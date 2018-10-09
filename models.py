@@ -146,3 +146,11 @@ class Article(PageInfo):
            self.title = self.page_title
        super().save(*args, **kwargs)
     
+
+class Packages(PageInfo):
+    title = models.CharField(max_length=100, default="Adventure Explorers Package")
+    content = MarkdownxField()
+    is_published = models.BooleanField()
+
+    def get_absolute_url(self):
+        return '/packages/{}'.format(self.page_qualifier)  

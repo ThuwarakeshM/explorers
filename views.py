@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from django.views.generic import ListView, DetailView
-from .models import Adventure, Event, Album, FlatPage, ImageSet, Query, Article
+from .models import Adventure, Event, Album, FlatPage, ImageSet, Query, Article, Packages
 from .forms import ContactForm
 from django.views.decorators.http import require_POST
 from django.utils import timezone
@@ -105,3 +105,12 @@ def articles(request):
     page = FlatPage.objects.get(page_qualifier='articles')
     arts = Article.objects.filter(is_published=True)
     return render(request, 'explorers/articles.html', {'page': page, 'articles': arts})
+
+def packages(request):
+    page = FlatPage.objects.get(page_qualifier='packages')
+    pkgs = Packages.objects.filter(is_published=True)
+    return render(request, 'explorers/packages.html', {'packages': pkgs, 'page': page})
+
+def package(request, qualifier):
+    pkg = Packages.objects.get(page_qualifier=qualifier)
+    return render(request, 'explorers/package.html', {'page': pkg})
