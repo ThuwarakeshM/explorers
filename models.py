@@ -35,6 +35,7 @@ class Album(PageInfo):
 
 
 class FlatPage(PageInfo):
+    is_published = models.BooleanField(default=False)
     def get_absolute_url(self):
         return '/{}'.format(self.page_qualifier)
 

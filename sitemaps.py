@@ -7,7 +7,7 @@ class PageSiteMap(Sitemap):
     protocol="https"
 
     def items(self):
-        return FlatPage.objects.all()
+        return FlatPage.objects.filter(is_published=True)
 
     def lastmod(self, obj):
         return obj.pub_date
