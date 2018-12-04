@@ -4,10 +4,11 @@
 <html lang="en" prefix="og: http://ogp.me/ns#">
 
 <head>
-  <script async src="//platform-api.sharethis.com/js/sharethis.js#property=5b99ac2dc265ef0011d174eb&product="sticky-share-buttons"></script>
+  <script async src="//platform-api.sharethis.com/js/sharethis.js#property=5b99ac2dc265ef0011d174eb&product="
+    sticky-share-buttons"></script>
 
   <meta http-equiv="Cache-control" content="max-age=31536000">
-<script>
+  <script>
     (function (i, s, o, g, r, a, m) {
       i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
         (i[r].q = i[r].q || []).push(arguments)
@@ -42,220 +43,61 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
     crossorigin="anonymous">
 
+  <link rel="stylesheet" href="{% static 'explorers/css/style.css' %}">
+
 </head>
 
 <body>
-  <style>
-      body {
-        background: url("https://image.ibb.co/goruMp/bg.jpg");
-    }
-    
-    p {
-        color: white;
-        text-align: justify;
-    }
-    
-    a {
-        color: white;
-    }
-    
-    .card-text {
-        height:120px;
-        max-width: 256px;
-    }
-    
-    .card {
-        border:none;
-        background:transparent;
-        color: white;
-    }
-    
-    h5, h3 {
-        color: #cf5a5a;
-    }
-    
-    .btn-primary {
-        border-radius: 0px;
-        background: white;
-        border-color: #b9b7b794;
-        color: #cf5a5a;
-    }
-    
-    .btn-primary:hover {
-        color:white;
-        background: #cf5a5a;
-        border-color: #cf5a5a;
-    }
-    
-    .navbar {
-    }
-    
-    .navbar a {
-        font-weight: bold;
-        color: white !important;
-    }
-    
-    .navbar a:hover {
-        color: #cf5a5a !important;
-        box-shadow: 2px 4px 8px 2px rgba(0, 0, 0, 0.2), 4px 6px 20px 4px rgba(0, 0, 0, 0.19);
-        border-radius: 5px;
-    }
-    
-    .card {
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    }
-    
-    .card img {
-        margin: 6%;
-        border-radius: 0%;
-        width: 256px;
-        height: auto;
-    }
-    
-    #adventure_detail img {
-        max-width: 100%;
-    }
-    
-    strong {
-        color: #cf5a5a;
-    }
-    
-    .map iframe {
-        height: 500px;
-        width: 100%;
-    }
-    
-    table {
-        color: white;
-    }
-    
-    table input {
-        width: 100%;
-    }
-    
-    li {
-        list-style: none;
-    }
-    
-    .fa-bars {
-        color:white;
-    }
-    
-    .form-control {
-        border-radius: 0px;
-        width: 100%;
-    }
-    
-    #album-images img {
-        max-width: 100%;
-        height: auto;
-    }
-    
-    #footer {
-        background: white;
-        text-align: center;
-        position: absolute;
-    }
-    
-    #footer p {
-        text-align: center; 
-        color: #cf5a5a;
-        margin-bottom: 1px;
-    }
-    .header {
-        text-align: center; 
-    }
-    .header p {
-        text-align:center;
-    }
-    
-    .carousel {
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    }
-    
-    html, body {
-        height: 100%;
-        margin: 0;
-      }
-      .wrapper {
-        min-height: 100%;
-      
-        margin-bottom: -100px;
-      }
-      #footer,
-      .push {
-        height: 100px;
-      }
-    
-      .article-content img {
-        width: 100%;
-        height: auto;
-      }
+  
 
-      .article-content ul {
-        color: white;
-      }
+    <div class="wrapper">
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand animated slideInDown" href="/">
+          <img src="{% static 'explorers/images/logo.png' %}" alt="">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <svg width="20px" height="20px" aria-hidden="true" data-prefix="fas" data-icon="bars" class="svg-inline--fa fa-bars fa-w-14"
+            role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+            <path fill="white" d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"></path>
+          </svg>
+        </button>
 
-      iframe {
-        width: 100%;
-        height: auto;
-      }
-    
-    @media screen and (max-width: 992px) {
-        .map iframe {
-            height: 250px;
-            width: 100%;
-        }
-      }
-  </style>
-  <div class="wrapper">
-    <nav class="navbar navbar-expand-lg navbar-light">
-      <a class="navbar-brand animated slideInDown delay-1s" href="/">
-        <img src="{% static 'explorers/images/logo.png' %}" alt="">
-      </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <svg width="20px" height="20px" aria-hidden="true" data-prefix="fas" data-icon="bars" class="svg-inline--fa fa-bars fa-w-14"
-          role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-          <path fill="white" d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"></path>
-        </svg>
-      </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item animated slideInDown">
+              <a class="nav-link" href="/adventures">Adventures</a>
+            </li>
+            <li class="nav-item animated slideInDown">
+              <a class="nav-link" href="/articles">Articles</a>
+            </li>
+            <li class="nav-item animated slideInDown">
+              <a class="nav-link" href="/events">Events</a>
+            </li>
+            <li class="nav-item animated slideInDown">
+              <a class="nav-link" href="/about">About</a>
+            </li>
+            <li class="nav-item animated slideInDown">
+              <a class="nav-link" href="/policies">Policies</a>
+            </li>
+            <li class="nav-item animated slideInDown">
+              <a class="nav-link" href="/contact">Contact Us</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
 
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item animated slideInDown delay-1s">
-            <a class="nav-link" href="/adventures">Adventures</a>
-          </li>
-          <li class="nav-item animated slideInDown delay-1s">
-            <a class="nav-link" href="/articles">Articles</a>
-          </li>
-          <li class="nav-item animated slideInDown delay-1s">
-            <a class="nav-link" href="/events">Events</a>
-          </li>
-          <li class="nav-item animated slideInDown delay-1s">
-            <a class="nav-link" href="/about">About</a>
-          </li>
-          <li class="nav-item animated slideInDown delay-1s">
-            <a class="nav-link" href="/policies">Policies</a>
-          </li>
-          <li class="nav-item animated slideInDown delay-1s">
-            <a class="nav-link" href="/contact">Contact Us</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
+      {% block content %}
 
-    {% block content %}
+      {% endblock content %}
+      <br>
 
-    {% endblock content %}
-    <br>
-
-    <div class="push"></div>
-  </div>
-  <div class="container-fluid px-0" id='footer'>
-    <p class="pt-1">Copyright &copy; 2018 Adventure Explorers</p>
-    <p>Site Developed and Maintained by <a href="https://www.innaun.com" style="color:brown"> Innaun (PVT) Ltd</a></p>
-  </div>
+      <div class="push"></div>
+    </div>
+    <div class="container-fluid px-0" id='footer'>
+      <p class="pt-1">Copyright &copy; 2018 Adventure Explorers</p>
+      <p>Site Developed and Maintained by <a href="https://www.innaun.com" style="color:brown"> Innaun (PVT) Ltd</a></p>
+    </div>
 
   <script>
 
@@ -296,8 +138,13 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
     crossorigin="anonymous"></script>
 
+  <script src="{% static 'explorers/js/wow.min.js' %}"></script>
+
+  <script>
+    new WOW().init();
+  </script>
   {% block sData %}
-  
+
   {% endblock sData %}
 </body>
 
