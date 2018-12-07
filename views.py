@@ -128,6 +128,7 @@ def articles(request):
     arts = get_list_or_404(Article, is_published=True)
     return render(request, 'explorers/articles.html', {'page': page, 'articles': arts})
 
+
 def packages(request):
     # page = FlatPage.objects.get(page_qualifier='packages')
     page = get_object_or_404(FlatPage, page_qualifier='packages')
@@ -135,7 +136,8 @@ def packages(request):
     pkgs = get_list_or_404(Packages, is_published=True)
     return render(request, 'explorers/packages.html', {'packages': pkgs, 'page': page})
 
+
 def package(request, qualifier):
     # pkg = Packages.objects.get(page_qualifier=qualifier)
-    pkg = get_object_or_404(page_qualifier=qualifier)
+    pkg = get_object_or_404(Packages, page_qualifier=qualifier)
     return render(request, 'explorers/package.html', {'page': pkg})
